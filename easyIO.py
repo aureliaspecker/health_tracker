@@ -7,7 +7,8 @@ def get_user_input(**kwargs):
 
     # Unpack arguments
     message=kwargs.get("message","")
-    dtype=kwargs.get("dtype","str")
+    dtype=kwargs.get("dtype",str)
+    dtype=dtype.__name__
 
     # Get input, repeat message if incorrect data type
     if dtype=="int": # integer data type
@@ -24,7 +25,7 @@ def get_user_input(**kwargs):
                 break
             except:
                 pass
-    elif dtype=="string": # string data type
+    elif dtype=="str": # string data type
         while True:
             try:
                 user_input=str(raw_input(message))
@@ -57,11 +58,15 @@ def get_user_menu_selection(title,menu):
     print title
     for i, option in enumerate(menu):
         print "{:})  {:}".format(i+1,option)
-    user_selection=get_user_input(dtype="int")-1
+    user_selection=get_user_input(dtype=int)-1
 
     return user_selection
 
 
 if __name__=="__main__":
-    menu=["a","b","c"]
-    print get_user_menu_selection("Select option",menu)
+    a=get_user_input(dtype=float)
+    print a
+    # menu=["a","b","c"]
+    # print get_user_menu_selection("Select option",menu)
+
+
