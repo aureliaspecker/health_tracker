@@ -65,5 +65,3 @@ def get_user_menu_selection(title,menu):
 if __name__=="__main__":
     menu=["a","b","c"]
     print get_user_menu_selection("Select option",menu)
-
-
