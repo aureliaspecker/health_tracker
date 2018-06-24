@@ -21,11 +21,11 @@ def main():
     sys.exit()
 
 def weight_input():
-    user_weight = io.get_user_input(message = "Please input your weight:", dtype = float)
+    user_weight = io.get_user_input(message = "Please input your weight: ", dtype = float)
     # Create file to write into
     output_file = open("name1.txt", "a+")
     # Write to the file
-    output_file.write(user_weight)
+    output_file.write("{:4.1f}".format(user_weight))
     output_file.write("\n")
     output_file.close()
 
