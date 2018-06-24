@@ -21,8 +21,7 @@ def main():
     sys.exit()
 
 def weight_input():
-    print "Please input your weight:"
-    user_weight = raw_input()
+    user_weight = io.get_user_input(message = "Please input your weight:", dtype = float)
     # Create file to write into
     output_file = open("name1.txt", "a+")
     # Write to the file
